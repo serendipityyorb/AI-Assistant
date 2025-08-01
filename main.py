@@ -25,7 +25,7 @@ if prompt:
         st.stop()
     st.chat_message("human").write(prompt)
     with st.spinner("让我想想怎么回答你(拍脑壳)"):
-        response = GetAIMessage("gpt-4o",api_key,base_url,prompt,st.session_state.memory)
+        response = GetAIMessage("gpt-4o-mini",api_key,base_url,prompt,st.session_state.memory)
     st.chat_message("ai").write(response)
     st.session_state.messages.append({"role":"human","content":prompt})
     st.session_state.messages.append({"role": "ai", "content": response})
